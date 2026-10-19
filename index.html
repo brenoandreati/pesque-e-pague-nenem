@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pesque Pague do Neném</title>
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <meta name="description" content="Pesca esportiva, restaurante, piscina e hospedagem em São Paulo de Viana, Viana – ES. Aberto aos sábados, domingos e feriados, das 8h às 18h. Desde 1994.">
+  <meta name="theme-color" content="#CFE2EA">
+  <meta property="og:title" content="Pesque Pague do Neném">
+  <meta property="og:description" content="Pesca, restaurante, piscina e pousada em Viana – ES. Veja as datas livres e reserve pelo WhatsApp.">
+  <meta property="og:image" content="assets/img/logo.png">
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Caveat:wght@600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/estilo.css">
+</head>
+<body>
+
+<svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <filter id="ondas" x="-5%" y="0" width="110%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.004 0.08" numOctaves="1" seed="4" result="ruido">
+      <animate attributeName="baseFrequency" dur="16s" values="0.004 0.08;0.006 0.11;0.004 0.08" repeatCount="indefinite"></animate>
+    </feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="ruido" scale="14" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+  </filter>
+</svg>
+
+<header class="topo" id="topo">
+  <div class="miolo topo__miolo">
+    <a class="marca" href="#inicio" aria-label="Pesque Pague do Neném, início">
+      <img src="assets/img/logo.png" alt="" width="46" height="46">
+      <span>Pesque Pague<br>do Neném</span>
+    </a>
+    <nav class="menu" aria-label="Principal">
+      <a class="menu__link" href="#pesqueiro">O pesqueiro</a>
+      <a class="menu__link" href="#hospedagem">Hospedagem</a>
+      <a class="menu__link" href="#visite">Como chegar</a>
+      <a class="botao botao--lago botao--pequeno" href="#agenda">Agenda</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <section class="hero" aria-labelledby="titulo">
+    <div class="ceu" id="ceu">
+      <div class="miolo ceu__miolo">
+        <p class="hero__lugar">São Paulo de Viana · ES <span class="mao">desde 1994</span></p>
+        <h1 class="titulo" id="titulo"><span>Pesque Pague</span> <span>do Neném</span></h1>
+      </div>
+      <svg class="morros" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path class="morro-fundo" d="M0 120 C140 70 260 52 400 86 C520 114 610 60 760 58 C900 56 980 104 1100 92 C1220 80 1320 40 1440 70 L1440 200 L0 200 Z"></path>
+        <path class="morro-frente" d="M0 170 C180 138 330 128 520 150 C700 170 820 130 980 132 C1140 134 1280 160 1440 146 L1440 200 L0 200 Z"></path>
+      </svg>
+      <svg class="palmeiras" viewBox="0 0 240 160" aria-hidden="true" focusable="false">
+        <g fill="none" stroke="currentColor" stroke-linecap="round">
+          <path stroke-width="4" d="M70 160 C70 128 72 92 78 58"></path>
+          <path stroke-width="3.5" d="M78 58 C64 46 48 46 34 58 M78 58 C68 40 54 34 42 36 M78 58 C82 40 94 32 110 36 M78 58 C92 48 108 50 118 62 M78 58 C76 46 78 36 84 28"></path>
+          <path stroke-width="4" d="M140 160 C139 120 141 80 146 40"></path>
+          <path stroke-width="3.5" d="M146 40 C130 28 112 28 98 42 M146 40 C136 20 120 14 106 16 M146 40 C152 22 166 14 182 18 M146 40 C162 30 178 34 190 46 M146 40 C144 28 148 16 154 8"></path>
+          <path stroke-width="4" d="M200 160 C200 134 201 106 204 78"></path>
+          <path stroke-width="3.5" d="M204 78 C192 68 180 68 170 78 M204 78 C196 62 184 58 174 60 M204 78 C208 64 218 58 230 60 M204 78 C216 70 228 72 236 82 M204 78 C203 68 206 58 211 52"></path>
+        </g>
+      </svg>
+    </div>
+
+    <div class="agua">
+      <div class="reflexo" id="reflexo" aria-hidden="true"></div>
+      <div class="miolo agua__miolo">
+        <p class="hero__texto">Pesca esportiva, restaurante, piscina e pousada às margens do lago. Aberto aos sábados, domingos e feriados, das 8h às 18h.</p>
+        <div class="hero__acoes">
+          <a class="botao botao--boia" href="#agenda">Ver datas livres</a>
+          <a class="botao botao--claro" href="https://wa.me/5527998555585?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Pesque%20Pague%20do%20Nen%C3%A9m." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4.5 19.5l1.2-3.6A7.8 7.8 0 1 1 8.6 18.6z"></path></svg>
+            Chamar no WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fatos" aria-label="Para passar o dia">
+    <div class="miolo">
+      <ul class="fatos__lista">
+        <li class="fato">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3.5 7h17v3a2 2 0 0 0 0 4v3h-17v-3a2 2 0 0 0 0-4z"></path><path d="M14.5 7.5v9" stroke-dasharray="1.6 2"></path></g></svg>
+          <p><strong>Entrada grátis</strong><span>Não cobramos para entrar.</span></p>
+        </li>
+        <li class="fato">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"></path></g></svg>
+          <p><strong>Sem reserva para o dia</strong><span>Quer passar o dia? É só chegar.</span></p>
+        </li>
+        <li class="fato">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="6" cy="10" rx="1.8" ry="2.3"></ellipse><ellipse cx="10" cy="6.2" rx="1.8" ry="2.3"></ellipse><ellipse cx="14.5" cy="6.2" rx="1.8" ry="2.3"></ellipse><ellipse cx="18.3" cy="10" rx="1.8" ry="2.3"></ellipse><path stroke-linejoin="round" d="M12.2 11.5c-2.6 0-5.2 3.4-5.2 5.6 0 1.6 1.3 2.4 2.7 2.4 1 0 1.6-.5 2.5-.5s1.5.5 2.5.5c1.4 0 2.7-.8 2.7-2.4 0-2.2-2.6-5.6-5.2-5.6z"></path></g></svg>
+          <p><strong>Aceitamos pets</strong><span>Seu bicho pode vir junto.</span></p>
+        </li>
+        <li class="fato">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M9 17.5V6l10.5-2.2v11.5"></path><circle cx="6.5" cy="17.5" r="2.5"></circle><circle cx="17" cy="15.3" r="2.5"></circle></g></svg>
+          <p><strong>Música ao vivo</strong><span>Domingos e feriados.</span></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="secao" id="pesqueiro" aria-labelledby="t-pesqueiro">
+    <div class="miolo">
+      <div class="secao__cabeca">
+        <p class="olho">O pesqueiro</p>
+        <h2 class="secao__titulo" id="t-pesqueiro">Pesca, comida e piscina</h2>
+        <p class="secao__lead">Sábados, domingos e feriados, das 8h às 18h. Não é permitido entrar com comida ou bebida.</p>
+      </div>
+
+      <div class="quadro">
+        <article class="quadro__col">
+          <p class="quadro__quando">Mais de 20 espécies no lago</p>
+          <h3>Pesca esportiva</h3>
+          <dl class="precos">
+            <div class="preco"><dt>Taxa de pesca, com seu material</dt><dd>R$ 30</dd></div>
+            <div class="preco"><dt>Vara comum + copinho de isca</dt><dd>R$ 10</dd></div>
+            <div class="preco"><dt>Peixe que você leva</dt><dd>no quilo</dd></div>
+          </dl>
+          <p class="quadro__nota">Pesque e solte com cuidado. Se o peixe se machucar, ele vai pra casa com você, cobrado no quilo.</p>
+        </article>
+
+        <article class="quadro__col">
+          <p class="quadro__quando">Almoço no fim de semana</p>
+          <h3>Restaurante</h3>
+          <dl class="precos">
+            <div class="preco"><dt>Sábado</dt><dd>à la carte e porções</dd></div>
+            <div class="preco"><dt>Domingo, self-service com churrasco</dt><dd>R$ 99,99/kg</dd></div>
+            <div class="preco"><dt>Couvert artístico</dt><dd>R$ 10</dd></div>
+          </dl>
+          <p class="quadro__nota">Música ao vivo aos domingos e feriados. Couvert conforme a Lei nº 9.784.</p>
+        </article>
+
+        <article class="quadro__col">
+          <p class="quadro__quando">Taxa de uso</p>
+          <h3>Piscina</h3>
+          <dl class="precos">
+            <div class="preco"><dt>Adultos</dt><dd>R$ 20</dd></div>
+            <div class="preco"><dt>Crianças até 12 anos</dt><dd>R$ 10</dd></div>
+          </dl>
+          <p class="quadro__nota">Hóspedes das suítes não pagam piscina, pesca nem couvert.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao secao--hospedagem" id="hospedagem" aria-labelledby="t-hospedagem">
+    <div class="miolo">
+      <div class="secao__cabeca">
+        <p class="olho">Hospedagem</p>
+        <h2 class="secao__titulo" id="t-hospedagem">Fique o fim de semana</h2>
+        <p class="secao__lead">Duas formas de dormir no pesqueiro. Veja as datas livres e peça a reserva pelo WhatsApp.</p>
+      </div>
+
+      <div class="casas">
+        <article class="casa">
+          <h3>Suítes</h3>
+          <p class="casa__destaque"><span class="casa__grande">R$ 300</span><span class="casa__peq">por diária, para casal, com café da manhã</span></p>
+          <dl class="horario">
+            <div><dt>Check-in</dt><dd>sábado, a partir das 10h</dd></div>
+            <div><dt>Check-out</dt><dd>domingo, até as 18h</dd></div>
+          </dl>
+          <ul class="itens">
+            <li>Ar-condicionado, Wi-Fi e TV</li>
+            <li>Crianças até 12 anos não pagam</li>
+            <li>Sem taxa de piscina, de pesca e de couvert</li>
+          </ul>
+          <p class="regra">Não é permitido trazer alimentos e bebidas. Os valores podem mudar em feriados.</p>
+          <button type="button" class="botao botao--contorno" data-ir-agenda="suite">Ver datas das suítes</button>
+        </article>
+
+        <article class="casa">
+          <h3>Casa do Lago</h3>
+          <p class="casa__destaque"><span class="casa__grande">Até 10</span><span class="casa__peq">adultos, alugada para o fim de semana inteiro</span></p>
+          <dl class="horario">
+            <div><dt>Entrada</dt><dd>sexta, a partir das 18h</dd></div>
+            <div><dt>Saída</dt><dd>domingo, até as 18h</dd></div>
+          </dl>
+          <ul class="itens">
+            <li>TV, Wi-Fi, fogão, geladeira e freezer</li>
+            <li>Área de churrasqueira</li>
+            <li>Pode trazer comida e bebida</li>
+          </ul>
+          <p class="regra">A casa não funciona por diária. O que vocês trouxerem não pode ser consumido no deck nem na área da piscina.</p>
+          <button type="button" class="botao botao--contorno" data-ir-agenda="casa">Ver datas da Casa do Lago</button>
+        </article>
+      </div>
+
+      <p class="entrada">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"></rect><path d="M3.5 9.5h17M8 3v4M16 3v4" stroke-linecap="round"></path><path d="M9 14.5l2 2 4-4" stroke-linecap="round"></path></g></svg>
+        Toda reserva é confirmada com 50% do valor como entrada.
+      </p>
+    </div>
+  </section>
+
+  <section class="secao secao--agenda" id="agenda" aria-labelledby="t-agenda">
+    <div class="miolo">
+      <div class="secao__cabeca">
+        <p class="olho">Agenda</p>
+        <h2 class="secao__titulo" id="t-agenda">Escolha seu fim de semana</h2>
+        <p class="secao__lead">Datas livres até dezembro de 2027. Selecione o fim de semana e mande o pedido pelo WhatsApp. A gente confirma por lá.</p>
+      </div>
+
+      <div class="agenda__grade">
+        <div class="calendario">
+          <fieldset class="tipo">
+            <legend class="so-leitor">Tipo de hospedagem</legend>
+            <input type="radio" name="tipo" id="tipo-suite" value="suite" checked>
+            <label for="tipo-suite">Suítes</label>
+            <input type="radio" name="tipo" id="tipo-casa" value="casa">
+            <label for="tipo-casa">Casa do Lago</label>
+          </fieldset>
+
+          <div class="navmes">
+            <button type="button" id="mes-ant" aria-label="Mês anterior">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14.5 6l-6 6 6 6"></path></svg>
+            </button>
+            <div class="meses-faixa" id="meses-faixa" role="group" aria-label="Ir para o mês"></div>
+            <button type="button" id="mes-prox" aria-label="Próximo mês">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9.5 6l6 6-6 6"></path></svg>
+            </button>
+          </div>
+
+          <div class="meses" id="meses"></div>
+
+          <div class="legenda">
+            <span class="leg leg--livre">Livre</span>
+            <span class="leg leg--poucas" id="leg-poucas">Poucas vagas</span>
+            <span class="leg leg--ocupado">Ocupado</span>
+            <span class="leg leg--feriado">Feriado</span>
+          </div>
+          <p class="cal__nota" id="cal-feriados"></p>
+          <p class="cal__nota">O pesqueiro abre aos sábados, domingos e feriados. Os dias de semana ficam fora da agenda.</p>
+          <p class="cal__exemplo" id="cal-exemplo" hidden>Prévia: as datas ocupadas são exemplos, só para mostrar como a agenda funciona.</p>
+        </div>
+
+        <aside class="resumo" id="resumo" aria-labelledby="t-resumo">
+          <h3 class="so-leitor" id="t-resumo">Seu pedido</h3>
+
+          <div class="resumo__vazio" id="resumo-vazio">
+            <p class="resumo__chamada">Escolha um fim de semana</p>
+            <p class="resumo__dica">Toque num sábado ou domingo livre no calendário. Os dias em verde estão disponíveis.</p>
+            <p class="resumo__rotulo">Próximos livres</p>
+            <div class="atalhos" id="atalhos"></div>
+          </div>
+
+          <form class="resumo__cheio" id="resumo-cheio" hidden>
+            <div class="resumo__topo">
+              <p class="resumo__tipo" id="r-tipo"></p>
+              <span class="selo" id="r-status"></span>
+            </div>
+            <p class="resumo__datas" id="r-datas" aria-live="polite"></p>
+            <dl class="resumo__horarios">
+              <div><dt>Chegada</dt><dd id="r-entrada"></dd></div>
+              <div><dt>Saída</dt><dd id="r-saida"></dd></div>
+            </dl>
+
+            <div class="campos">
+              <div class="campo" id="campo-suites">
+                <span class="campo__rotulo" id="l-suites">Suítes</span>
+                <div class="passo">
+                  <button type="button" data-passo="suites" data-delta="-1" aria-label="Menos uma suíte">−</button>
+                  <output id="v-suites" aria-labelledby="l-suites">1</output>
+                  <button type="button" data-passo="suites" data-delta="1" aria-label="Mais uma suíte">+</button>
+                </div>
+              </div>
+              <div class="campo">
+                <span class="campo__rotulo" id="l-adultos">Adultos</span>
+                <div class="passo">
+                  <button type="button" data-passo="adultos" data-delta="-1" aria-label="Menos um adulto">−</button>
+                  <output id="v-adultos" aria-labelledby="l-adultos">2</output>
+                  <button type="button" data-passo="adultos" data-delta="1" aria-label="Mais um adulto">+</button>
+                </div>
+              </div>
+              <div class="campo">
+                <span class="campo__rotulo" id="l-criancas">Crianças <small>até 12 anos</small></span>
+                <div class="passo">
+                  <button type="button" data-passo="criancas" data-delta="-1" aria-label="Menos uma criança">−</button>
+                  <output id="v-criancas" aria-labelledby="l-criancas">0</output>
+                  <button type="button" data-passo="criancas" data-delta="1" aria-label="Mais uma criança">+</button>
+                </div>
+              </div>
+              <div class="campo campo--texto">
+                <label class="campo__rotulo" for="nome">Seu nome</label>
+                <input type="text" id="nome" name="nome" autocomplete="name" placeholder="Como devemos te chamar?">
+              </div>
+            </div>
+
+            <p class="resumo__aviso" id="r-aviso" hidden></p>
+            <div class="resumo__valor" id="r-valor"></div>
+
+            <a class="botao botao--mata botao--largo" id="r-zap" href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4.5 19.5l1.2-3.6A7.8 7.8 0 1 1 8.6 18.6z"></path></svg>
+              Pedir reserva no WhatsApp
+            </a>
+            <p class="resumo__nota">A reserva fica garantida depois da confirmação e do pagamento de 50% de entrada.</p>
+
+            <details class="resumo__msg">
+              <summary>Ver a mensagem que será enviada</summary>
+              <pre id="r-msg"></pre>
+            </details>
+
+            <button type="button" class="resumo__trocar" id="r-limpar">Escolher outra data</button>
+          </form>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="visite" id="visite" aria-labelledby="t-visite">
+  <div class="miolo">
+    <div class="visite__grade">
+      <div class="visite__marca">
+        <img src="assets/img/logo.png" alt="Logo do Pesque Pague do Neném" width="84" height="84">
+        <p class="olho">Visite</p>
+        <h2 id="t-visite">São Paulo de Viana, Viana – ES</h2>
+        <p class="mao">Esperamos você e sua família!</p>
+      </div>
+      <dl class="visite__dados">
+        <div><dt>Horário</dt><dd>Sábados, domingos e feriados, das 8h às 18h</dd></div>
+        <div><dt>Como chegar</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Pesque+Pague+do+Nen%C3%A9m+Viana+ES" target="_blank" rel="noopener">Abrir no Google Maps</a></dd></div>
+      </dl>
+      <dl class="visite__dados">
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/5527998555585" target="_blank" rel="noopener">(27) 99855-5585</a><br><a href="https://wa.me/5527992913789" target="_blank" rel="noopener">(27) 99291-3789</a></dd></div>
+        <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/pesquepaguedonenemoficial/" target="_blank" rel="noopener">@pesquepaguedonenemoficial</a></dd></div>
+      </dl>
+    </div>
+    <div class="rodape">
+      <p>Respeite a natureza. Preserve nossos peixes.</p>
+      <p>Pesque Pague do Neném · desde 1994</p>
+    </div>
+  </div>
+</footer>
+
+<div class="barra-sel" id="barra-sel" hidden>
+  <p class="barra-sel__txt"><strong id="b-datas"></strong><span id="b-tipo"></span></p>
+  <a class="botao botao--boia botao--pequeno" href="#resumo">Revisar pedido</a>
+</div>
+
+<script src="assets/js/agenda.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

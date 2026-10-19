@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Painel de Reservas</title>
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0A2B48">
+  <link rel="icon" href="../assets/img/logo.png">
+  <link rel="apple-touch-icon" href="../assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Caveat:wght@600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/estilo.css">
+  <link rel="stylesheet" href="painel.css">
+</head>
+<body class="painel">
+
+<!-- Entrada -->
+<main class="entrar" id="tela-entrar" hidden>
+  <form class="entrar__cartao" id="form-entrar" novalidate>
+    <img src="../assets/img/logo.png" alt="" width="88" height="88">
+    <p class="olho">Pesque Pague do Neném</p>
+    <h1>Painel de reservas</h1>
+    <p class="entrar__dica">Marque as reservas fechadas pelo WhatsApp. O site atualiza na hora.</p>
+    <label class="rotulo" for="senha">Senha</label>
+    <input class="entrada-txt" type="password" id="senha" name="senha" autocomplete="current-password" required>
+    <p class="msg-erro" id="erro-entrar" role="alert" hidden></p>
+    <button class="botao botao--lago botao--largo" type="submit" id="btn-entrar">Entrar</button>
+  </form>
+</main>
+
+<!-- Carregando -->
+<div class="carregando" id="tela-carregando">
+  <img src="../assets/img/logo.png" alt="" width="64" height="64">
+  <p>Abrindo o painel…</p>
+</div>
+
+<!-- Painel -->
+<div class="app" id="tela-app" hidden>
+  <header class="p-topo">
+    <div class="miolo p-topo__miolo">
+      <a class="p-marca" href="../" title="Ver o site">
+        <img src="../assets/img/logo.png" alt="" width="40" height="40">
+        <span>Painel<br><small>Pesque Pague do Neném</small></span>
+      </a>
+      <div class="p-topo__acoes">
+        <button type="button" class="icone-btn" id="btn-ajustes" aria-label="Ajustes">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"></path><circle cx="16" cy="7" r="2.2"></circle><circle cx="10" cy="17" r="2.2"></circle></g></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="miolo p-main">
+    <fieldset class="tipo tipo--abas">
+      <legend class="so-leitor">Hospedagem</legend>
+      <input type="radio" name="p-tipo" id="p-tipo-suite" value="suite" checked>
+      <label for="p-tipo-suite">Suítes</label>
+      <input type="radio" name="p-tipo" id="p-tipo-casa" value="casa">
+      <label for="p-tipo-casa">Casa do Lago</label>
+    </fieldset>
+
+    <section class="painel-resumo" id="painel-resumo" aria-label="Resumo"></section>
+
+    <div class="p-barra">
+      <div class="visao" role="tablist" aria-label="Visualização">
+        <button type="button" role="tab" id="aba-fds" aria-selected="true" aria-controls="v-fds">Fins de semana</button>
+        <button type="button" role="tab" id="aba-lista" aria-selected="false" aria-controls="v-lista">Reservas</button>
+      </div>
+    </div>
+
+    <section id="v-fds" role="tabpanel" aria-labelledby="aba-fds">
+      <div class="navmes">
+        <button type="button" id="p-mes-ant" aria-label="Mês anterior">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14.5 6l-6 6 6 6"></path></svg>
+        </button>
+        <div class="meses-faixa" id="p-meses" role="group" aria-label="Ir para o mês"></div>
+        <button type="button" id="p-mes-prox" aria-label="Próximo mês">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9.5 6l6 6-6 6"></path></svg>
+        </button>
+      </div>
+      <h2 class="p-mes-nome" id="p-mes-nome"></h2>
+      <div class="fds-lista" id="fds-lista"></div>
+    </section>
+
+    <section id="v-lista" role="tabpanel" aria-labelledby="aba-lista" hidden>
+      <div class="filtros">
+        <label class="so-leitor" for="busca">Buscar por nome</label>
+        <input class="entrada-txt entrada-txt--busca" type="search" id="busca" placeholder="Buscar por nome ou telefone" autocomplete="off">
+        <div class="chips" id="filtros" role="group" aria-label="Filtrar por pagamento"></div>
+      </div>
+      <div class="res-lista" id="res-lista"></div>
+    </section>
+  </main>
+
+  <button type="button" class="fab" id="btn-nova">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 5v14M5 12h14"></path></svg>
+    Nova reserva
+  </button>
+</div>
+
+<!-- Fim de semana -->
+<dialog class="folha" id="folha-fds" aria-labelledby="fds-titulo">
+  <div class="folha__corpo">
+    <span class="folha__puxador" aria-hidden="true"></span>
+    <div class="folha__cabeca">
+      <div>
+        <p class="olho" id="fds-tipo"></p>
+        <h2 class="folha__titulo" id="fds-titulo"></h2>
+        <p class="folha__sub" id="fds-sub"></p>
+      </div>
+      <button type="button" class="icone-btn icone-btn--claro" data-fechar aria-label="Fechar">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"></path></svg>
+      </button>
+    </div>
+    <div id="fds-conteudo"></div>
+  </div>
+</dialog>
+
+<!-- Reserva -->
+<dialog class="folha" id="folha-reserva" aria-labelledby="res-titulo">
+  <form class="folha__corpo" id="form-reserva" novalidate>
+    <span class="folha__puxador" aria-hidden="true"></span>
+    <div class="folha__cabeca">
+      <div>
+        <p class="olho" id="res-tipo"></p>
+        <h2 class="folha__titulo" id="res-titulo">Nova reserva</h2>
+      </div>
+      <button type="button" class="icone-btn icone-btn--claro" data-fechar aria-label="Fechar">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"></path></svg>
+      </button>
+    </div>
+
+    <div class="form-grade">
+      <div class="campo-f campo-f--largo">
+        <label class="rotulo" for="r-sabado">Fim de semana</label>
+        <select class="entrada-txt" id="r-sabado" name="sabado"></select>
+      </div>
+      <div class="campo-f campo-f--largo">
+        <label class="rotulo" for="r-nome">Nome de quem reservou</label>
+        <input class="entrada-txt" type="text" id="r-nome" name="nome" autocomplete="off" required>
+      </div>
+      <div class="campo-f campo-f--largo">
+        <label class="rotulo" for="r-telefone">WhatsApp</label>
+        <input class="entrada-txt" type="tel" id="r-telefone" name="telefone" inputmode="tel" placeholder="(27) 99999-9999" autocomplete="off">
+      </div>
+
+      <div class="contadores campo-f--largo">
+        <div class="contador" id="c-suites">
+          <span class="rotulo" id="l-r-suites">Suítes</span>
+          <div class="passo">
+            <button type="button" data-cont="suites" data-delta="-1" aria-label="Menos uma suíte">−</button>
+            <output id="r-suites" aria-labelledby="l-r-suites">1</output>
+            <button type="button" data-cont="suites" data-delta="1" aria-label="Mais uma suíte">+</button>
+          </div>
+        </div>
+        <div class="contador">
+          <span class="rotulo" id="l-r-adultos">Adultos</span>
+          <div class="passo">
+            <button type="button" data-cont="adultos" data-delta="-1" aria-label="Menos um adulto">−</button>
+            <output id="r-adultos" aria-labelledby="l-r-adultos">2</output>
+            <button type="button" data-cont="adultos" data-delta="1" aria-label="Mais um adulto">+</button>
+          </div>
+        </div>
+        <div class="contador">
+          <span class="rotulo" id="l-r-criancas">Crianças</span>
+          <div class="passo">
+            <button type="button" data-cont="criancas" data-delta="-1" aria-label="Menos uma criança">−</button>
+            <output id="r-criancas" aria-labelledby="l-r-criancas">0</output>
+            <button type="button" data-cont="criancas" data-delta="1" aria-label="Mais uma criança">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="campo-f campo-f--largo">
+        <label class="rotulo" for="r-valor">Valor total</label>
+        <div class="dinheiro">
+          <span aria-hidden="true">R$</span>
+          <input class="entrada-txt" type="text" id="r-valor" name="valor" inputmode="decimal" placeholder="0,00" autocomplete="off">
+        </div>
+        <p class="campo-f__dica" id="r-valor-dica"></p>
+      </div>
+
+      <fieldset class="pagamento campo-f--largo">
+        <legend class="rotulo">Pagamento</legend>
+        <div class="pagamento__opcoes">
+          <input type="radio" name="pagamento" id="pg-pendente" value="pendente" checked>
+          <label for="pg-pendente" class="pg pg--pendente"><b>Aguardando entrada</b><small>Ainda não pagou nada</small></label>
+          <input type="radio" name="pagamento" id="pg-entrada" value="entrada">
+          <label for="pg-entrada" class="pg pg--entrada"><b>Entrada paga</b><small>Pagou os 50%</small></label>
+          <input type="radio" name="pagamento" id="pg-pago" value="pago">
+          <label for="pg-pago" class="pg pg--pago"><b>Pago</b><small>Pagou tudo</small></label>
+        </div>
+        <p class="pagamento__conta" id="r-conta"></p>
+      </fieldset>
+
+      <div class="campo-f campo-f--largo">
+        <label class="rotulo" for="r-obs">Observações</label>
+        <textarea class="entrada-txt" id="r-obs" name="obs" rows="2" placeholder="Ex.: chega mais tarde, aniversário, pet junto"></textarea>
+      </div>
+    </div>
+
+    <p class="msg-erro" id="erro-reserva" role="alert" hidden></p>
+
+    <div class="folha__rodape">
+      <button type="submit" class="botao botao--lago" id="btn-salvar">Salvar reserva</button>
+      <button type="button" class="botao botao--texto" data-fechar>Cancelar</button>
+      <div class="excluir" id="area-excluir" hidden>
+        <button type="button" class="botao botao--texto botao--perigo" id="btn-excluir">Excluir</button>
+        <span class="excluir__confirma" id="confirma-excluir" hidden>
+          Excluir mesmo?
+          <button type="button" class="botao botao--perigo-cheio botao--pequeno" id="btn-excluir-sim">Sim, excluir</button>
+          <button type="button" class="botao botao--texto botao--pequeno" id="btn-excluir-nao">Não</button>
+        </span>
+      </div>
+    </div>
+  </form>
+</dialog>
+
+<!-- Ajustes -->
+<dialog class="folha" id="folha-ajustes" aria-labelledby="aj-titulo">
+  <form class="folha__corpo" id="form-ajustes" novalidate>
+    <span class="folha__puxador" aria-hidden="true"></span>
+    <div class="folha__cabeca">
+      <div>
+        <p class="olho">Painel</p>
+        <h2 class="folha__titulo" id="aj-titulo">Ajustes</h2>
+      </div>
+      <button type="button" class="icone-btn icone-btn--claro" data-fechar aria-label="Fechar">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"></path></svg>
+      </button>
+    </div>
+    <div class="form-grade">
+      <div class="contador campo-f--largo">
+        <span class="rotulo" id="l-aj-suites">Quantas suítes vocês têm</span>
+        <div class="passo">
+          <button type="button" data-aj="-1" aria-label="Menos uma suíte">−</button>
+          <output id="aj-suites" aria-labelledby="l-aj-suites">6</output>
+          <button type="button" data-aj="1" aria-label="Mais uma suíte">+</button>
+        </div>
+      </div>
+      <div class="campo-f">
+        <label class="rotulo" for="aj-diaria">Diária da suíte</label>
+        <div class="dinheiro"><span aria-hidden="true">R$</span><input class="entrada-txt" type="text" id="aj-diaria" inputmode="decimal" autocomplete="off"></div>
+      </div>
+      <div class="campo-f">
+        <label class="rotulo" for="aj-casa">Valor da Casa do Lago</label>
+        <div class="dinheiro"><span aria-hidden="true">R$</span><input class="entrada-txt" type="text" id="aj-casa" inputmode="decimal" placeholder="sob consulta" autocomplete="off"></div>
+      </div>
+      <p class="campo-f__dica campo-f--largo">Esses valores aparecem no site. Deixe a Casa do Lago em branco para mostrar "sob consulta".</p>
+    </div>
+    <p class="msg-erro" id="erro-ajustes" role="alert" hidden></p>
+    <div class="folha__rodape">
+      <button type="submit" class="botao botao--lago">Salvar ajustes</button>
+      <button type="button" class="botao botao--texto" id="btn-sair">Sair do painel</button>
+    </div>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="painel.js"></script>
+</body>
+</html>

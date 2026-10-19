@@ -1,7 +1,7 @@
-(function () {
+// Monta a agenda com os dados de ocupação (vindos do painel, ou de agenda.js se o painel estiver fora do ar)
+function iniciarAgenda(A) {
   'use strict';
 
-  var A = window.AGENDA || {};
   var WHATSAPP = String(A.whatsapp || '5527998555585').replace(/\D/g, '');
   var PRECOS = A.precos || {};
   var DIARIA_SUITE = typeof PRECOS.suiteDiaria === 'number' ? PRECOS.suiteDiaria : 300;
@@ -91,12 +91,14 @@
   var POUCAS = conjunto(A.suites && A.suites.poucasVagas);
   var RESERVADO = conjunto(A.casaDoLago && A.casaDoLago.reservado);
   var FECHADO = conjunto(A.fechado);
+  var FECHADO_SUITE = conjunto(A.suites && A.suites.fechado);
+  var FECHADO_CASA = conjunto(A.casaDoLago && A.casaDoLago.fechado);
 
   function status(tipo, sab) {
     var k = iso(sab);
     var chegada = tipo === 'casa' ? soma(sab, -1) : sab;
     if (chegada < hoje) return 'passado';
-    if (FECHADO[k]) return 'fechado';
+    if (FECHADO[k] || (tipo === 'casa' ? FECHADO_CASA : FECHADO_SUITE)[k]) return 'fechado';
     if (tipo === 'casa') return RESERVADO[k] ? 'ocupado' : 'livre';
     if (LOTADO[k]) return 'ocupado';
     if (POUCAS[k]) return 'poucas';
@@ -474,6 +476,21 @@
 
   $('cal-exemplo').hidden = !A.exemplo;
   desenharTudo();
+}
+
+(function () {
+  var base = window.AGENDA || {};
+  var meses = document.getElementById('meses');
+  if (!meses) return;
+  if (location.protocol === 'file:' || !window.fetch) { iniciarAgenda(base); return; }
+  meses.innerHTML = '<p class="cal__carregando">Carregando a agenda…</p>';
+  fetch('/api/agenda', { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (d) { iniciarAgenda(Object.assign({}, base, d, { exemplo: false })); })
+    .catch(function () {
+      iniciarAgenda(base);
+      document.getElementById('cal-erro').hidden = false;
+    });
 })();
 
 /* ---------- Topo e reflexo do lago ---------- */

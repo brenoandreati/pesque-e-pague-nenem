@@ -1,5 +1,13 @@
 {
   "name": "pesque-pague-do-nenem",
   "pages_build_output_dir": "./public",
-  "compatibility_date": "2026-10-01"
+  "compatibility_date": "2026-10-01",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "pesque-pague-do-nenem",
+      "database_id": "93494fb7-eada-41e1-8db9-bd4af0f9f0b2",
+      "migrations_dir": "migrations"
+    }
+  ]
 }

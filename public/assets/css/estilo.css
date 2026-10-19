@@ -562,6 +562,7 @@ button.fds:focus-visible { outline-offset: -3px; border-radius: 12px; }
 .leg--ocupado { --leg: var(--ocupado); }
 .leg--feriado::before { width: 7px; height: 7px; margin-inline: 4px; border-radius: 50%; background: var(--boia-escura); }
 .cal__nota { margin-top: 10px; font-size: .86rem; color: var(--musgo); }
+.cal__carregando { padding: 48px 0; text-align: center; color: var(--musgo); }
 .cal__nota:empty { display: none; }
 .cal__exemplo {
   margin-top: 14px;

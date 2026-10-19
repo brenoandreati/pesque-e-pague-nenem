@@ -6,7 +6,7 @@ Site estático (HTML, CSS e JavaScript puros, sem build) do Pesque Pague do Nen�
 - **Hospedagem**: Suítes e Casa do Lago, com regras e horários.
 - **Agenda**: calendário até dezembro de 2027 com os fins de semana livres e ocupados. A pessoa escolhe o fim de semana, informa quantas pessoas vão e o site monta a mensagem pronta para o WhatsApp.
 
-No ar em: https://pesque-pague-do-nenem.brenoandreati.workers.dev
+No ar em: https://pesque-pague-do-nenem.pages.dev
 
 ## Arquivos
 
@@ -39,10 +39,10 @@ Os feriados nacionais (incluindo Carnaval, Sexta-feira Santa e Corpus Christi) s
 
 ## Publicar
 
-O site está na Cloudflare, servido como arquivos estáticos (pasta `public/`, sem passo de build). Depois de editar, publique de novo a partir da raiz do repositório:
+O site está no Cloudflare Pages, servido como arquivos estáticos (pasta `public/`, sem passo de build). Depois de editar, publique de novo a partir da raiz do repositório:
 
 ```
-npx wrangler deploy
+npx wrangler pages deploy --branch main
 ```
 
 Para ver no computador antes de publicar, abra `public/index.html` no navegador.

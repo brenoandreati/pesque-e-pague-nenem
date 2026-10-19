@@ -6,19 +6,22 @@ Site estático (HTML, CSS e JavaScript puros, sem build) do Pesque Pague do Nen�
 - **Hospedagem**: Suítes e Casa do Lago, com regras e horários.
 - **Agenda**: calendário até dezembro de 2027 com os fins de semana livres e ocupados. A pessoa escolhe o fim de semana, informa quantas pessoas vão e o site monta a mensagem pronta para o WhatsApp.
 
+No ar em: https://pesque-pague-do-nenem.brenoandreati.workers.dev
+
 ## Arquivos
 
 ```
-index.html            página única
-assets/css/estilo.css visual
-assets/js/agenda.js   ← datas ocupadas, preços e número do WhatsApp (o que se edita no dia a dia)
-assets/js/site.js     calendário, feriados e mensagem do WhatsApp
-assets/img/logo.png   logo
+public/index.html            página única
+public/assets/css/estilo.css visual
+public/assets/js/agenda.js   ← datas ocupadas, preços e número do WhatsApp (o que se edita no dia a dia)
+public/assets/js/site.js     calendário, feriados e mensagem do WhatsApp
+public/assets/img/logo.png   logo
+wrangler.jsonc               configuração de publicação na Cloudflare
 ```
 
 ## Como atualizar a agenda
 
-Abra `assets/js/agenda.js` e coloque a data do **sábado** de cada fim de semana, no formato `"AAAA-MM-DD"`:
+Abra `public/assets/js/agenda.js` e coloque a data do **sábado** de cada fim de semana, no formato `"AAAA-MM-DD"`:
 
 ```js
 suites: {
@@ -36,8 +39,10 @@ Os feriados nacionais (incluindo Carnaval, Sexta-feira Santa e Corpus Christi) s
 
 ## Publicar
 
-Qualquer hospedagem de site estático serve. No Cloudflare Pages, sem passo de build:
+O site está na Cloudflare, servido como arquivos estáticos (pasta `public/`, sem passo de build). Depois de editar, publique de novo a partir da raiz do repositório:
 
 ```
-npx wrangler pages deploy . --project-name pesque-pague-do-nenem --branch main
+npx wrangler deploy
 ```
+
+Para ver no computador antes de publicar, abra `public/index.html` no navegador.
